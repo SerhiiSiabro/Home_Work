@@ -1,8 +1,5 @@
 const operation = prompt('Hello!\nChoose operator (+, -, * , /, cos, sin, pow)!')
 
-// if (operation != '+' ||  '-' || '*' || '/' || 'cos' || 'sin' || 'pow') {
-//     alert ('Operator is invalid!')
-// }
 
 if (operation == '+') {
     const firstNumber = Number(prompt('Enter, please the first number'));

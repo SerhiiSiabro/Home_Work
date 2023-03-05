@@ -1,30 +1,33 @@
 const operation = prompt('Hello!\nChoose operator (+, -, * , /, cos, sin, pow)!')
 
+const firstNumber =  Number(prompt('Enter, please the first number'));
+const secondNumber = Number(prompt('Enter, please the second number'));
+
 switch (operation) {
     case '+': {
-        const firstNumber = Number(prompt('Enter, please the first number'));
-        const secondNumber = Number(prompt('Enter, please the second number'));
+        firstNumber;
+        secondNumber;
         const resultSum = firstNumber + secondNumber;
         alert ('Sum: ' + firstNumber + ' + ' + secondNumber + ' = ' + resultSum);
         break; 
     }
     case '-': {
-        const firstNumber = Number(prompt('Enter, please the first number'));
-        const secondNumber = Number(prompt('Enter, please the second number'));
+        firstNumber;
+        secondNumber;
         const resultDiff = firstNumber - secondNumber;
         alert ('Diff: ' + firstNumber + ' - ' + secondNumber + ' = ' + resultDiff);
         break; 
     }
     case '*': {
-        const firstNumber = Number(prompt('Enter, please the first number'));
-        const secondNumber = Number(prompt('Enter, please the second number'));
+        firstNumber;
+        secondNumber;
         const resultMult = firstNumber * secondNumber;
         alert ('Mult: ' + firstNumber + ' * ' + secondNumber + ' = ' + resultMult);
         break; 
     }
     case '/': {
-        const firstNumber = Number(prompt('Enter, please the first number'));
-        const secondNumber = Number(prompt('Enter, please the second number'));
+        firstNumber;
+        secondNumber;
         const resultDiv = firstNumber / secondNumber;
         alert ('Div: ' + firstNumber + ' / ' + secondNumber + ' = ' + resultDiv);
         break; 
@@ -42,9 +45,9 @@ switch (operation) {
         break; 
     }
     case 'pow': {
-        const firstNumber = Number(prompt('Enter, please the base number'));
-        const secondNumber = Number(prompt('Enter, please the exponent number'));
-        const resultPow = Math.pow(firstNumber, secondNumber);
+        const firstNumberPow = Number(prompt('Enter, please the base number'));
+        const secondNumberPow = Number(prompt('Enter, please the exponent number'));
+        const resultPow = Math.pow(firstNumberPow, secondNumberPow);
         alert ('Power(' + firstNumber + ',' + secondNumber +') =' + resultPow);
         break; 
     }

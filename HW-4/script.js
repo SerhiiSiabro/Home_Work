@@ -54,4 +54,7 @@ switch (operation) {
         }
         alert (`${fullNameOfOperation + result})`)
     }
+    default: {
+        alert ("This is an invalid operator!");
+    }
 }

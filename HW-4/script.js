@@ -52,7 +52,8 @@ switch (operation) {
                 break;
             }
         }
-        alert (`${fullNameOfOperation + result})`)
+        alert (`${fullNameOfOperation + result})`);
+        break;
     }
     default: {
         alert ("This is an invalid operator!");

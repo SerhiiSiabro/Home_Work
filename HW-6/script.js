@@ -14,7 +14,7 @@ function checkingOperator() {
         && operation !== 'cos' && operation !== 'sin' && operation !== 'pow' && operation !== 'history');
 }
 function validationInput(a) {
-    return isValidNuumber = +a;
+    return isValidNuumber = a;
 }
 
 function addition() {

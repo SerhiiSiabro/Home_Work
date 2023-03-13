@@ -8,39 +8,39 @@ let mathematicalExpression;
 let history = [];
 
 function checkingOperator() {
-    do {
-        operation = prompt('Hello!\nChoose operator (+, -, * , /, cos, sin, pow, history)!');
-    } while (operation !== '+' && operation !== '-' && operation !== '/' && operation !== '*'
-        && operation !== 'cos' && operation !== 'sin' && operation !== 'pow' && operation !== 'history');
+    return operation !== '+' && operation !== '-' && operation !== '/' && operation !== '*'
+    && operation !== 'cos' && operation !== 'sin' && operation !== 'pow' && operation !== 'history';
 }
 function validationInput(a) {
-    return isValidNuumber = a;
+    return isNaN(a);
 }
 
 function addition() {
-    return firstNumber + secondNumber;
+    return +firstNumber + +secondNumber;
 }
 function subtraction() {
-    return firstNumber - secondNumber;
+    return +firstNumber - +secondNumber;
 }
 function multiplication() {
-    return firstNumber * secondNumber;
+    return +firstNumber * +secondNumber;
 }
 function division() {
-    return firstNumber / secondNumber;
+    return +firstNumber / +secondNumber;
 }
 function power() {
-    return Math.pow(firstNumber, secondNumber);
+    return Math.pow(+firstNumber, +secondNumber);
 }
 function sinus() {
-    return Math.sin(number);
+    return Math.sin(+number);
 }
 function cosinus() {
-    return Math.cos(number);
+    return Math.cos(+number);
 }
 
 do {
-    checkingOperator();
+    do {
+        operation = prompt('Hello!\nChoose operator (+, -, * , /, cos, sin, pow, history)!');
+    } while (checkingOperator());
     switch (operation) {
         case 'history': {
             alert(history);
@@ -49,13 +49,11 @@ do {
         }
         case '+': case '-': case '*': case '/': {
             do {
-                firstNumber = +prompt('Enter, please the first number');
-                validationInput(firstNumber);
-            } while (isNaN(isValidNuumber));
+                firstNumber = prompt('Enter, please the first number');
+            } while (validationInput(firstNumber));
             do {
-                secondNumber = +prompt('Enter, please the second number');
-                validationInput(secondNumber);
-            } while (isNaN(isValidNuumber));
+                secondNumber = prompt('Enter, please the second number');
+            } while (validationInput(secondNumber));
             switch (operation) {
                 case '+': {
                     fullNameOfOperation = 'Sum: ';
@@ -84,13 +82,11 @@ do {
         }
         case 'pow': {
             do {
-                firstNumber = +prompt('Enter, please the base number');
-                validationInput(firstNumber);
-            } while (isNaN(isValidNuumber));
+                firstNumber = prompt('Enter, please the base number');
+            } while (validationInput(firstNumber));
             do {
-                secondNumber = +prompt('Enter, please the exponent number');
-                validationInput(secondNumber);
-            } while (isNaN(isValidNuumber));
+                secondNumber = prompt('Enter, please the exponent number');
+            } while (validationInput(secondNumber));
             result = power();
             console.log(mathematicalExpression = 'Power(' + firstNumber + ',' + secondNumber +') =' + result);
             oneMoreOperation = confirm('Do you want to do one more calculation or look history?');
@@ -98,9 +94,8 @@ do {
         }
         case 'sin': case 'cos': {
             do {
-                number = +prompt('Enter, please the number');
-                validationInput(number);
-            } while (isNaN(isValidNuumber));
+                number = prompt('Enter, please the number');
+            } while (validationInput(number));
             ;
             switch (operation) {
                 case 'sin': {

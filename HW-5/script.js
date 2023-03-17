@@ -10,24 +10,30 @@ let history = [];
 do {
     do {
         operation = prompt('Hello!\nChoose operator (+, -, * , /, cos, sin, pow, history)!');
-    } while (operation !== '+' && operation !== '-' && operation !== '/' && operation !== '*'
+    } while (operation !== null && operation !== '+' && operation !== '-' && operation !== '/' && operation !== '*'
         && operation !== 'cos' && operation !== 'sin' && operation !== 'pow' && operation !== 'history');
 
     switch (operation) {
+        case null: {
+            break;
+        }
         case 'history': {
-            alert(history);
+            let i = 0;
+            while (i < history.length) {
+                console.log(`Operation №${i + 1}: ` + history[i]);
+                i++;
+            }
+            alert('HISTORY IN CONSOLE!');
             oneMoreOperation = confirm('Do you want continue to do calculation?');
             break;
         }
         case '+': case '-': case '*': case '/': {
             do {
-                firstNumber = +prompt('Enter, please the first number');
-                validNuumberFirstNamber = firstNumber;
-            } while (isNaN(validNuumberFirstNamber));
+                firstNumber = prompt('Enter, please the first number');
+            } while (firstNumber === '' || isNaN(Number(firstNumber)) || firstNumber === null);
             do {
-                secondNumber = +prompt('Enter, please the second number');
-                validNuumberSecondNamber = +secondNumber;
-            } while (isNaN(validNuumberSecondNamber));
+                secondNumber = prompt('Enter, please the second number');
+            } while (secondNumber === '' || isNaN(Number(secondNumber)) || secondNumber === null);
             switch (operation) {
                 case '+': {
                     fullNameOfOperation = 'Sum: ';
@@ -56,13 +62,11 @@ do {
         }
         case 'pow': {
             do {
-                firstNumber = +prompt('Enter, please the base number');
-                validNuumberFirstNamber = firstNumber;
-            } while (isNaN(validNuumberFirstNamber));
+                firstNumber = prompt('Enter, please the base number');
+            } while (firstNumber === '' || isNaN(Number(firstNumber)) || firstNumber === null);
             do {
-                secondNumber = +prompt('Enter, please the exponent number');
-                validNuumberSecondNamber = +secondNumber;
-            } while (isNaN(validNuumberSecondNamber));
+                secondNumber = prompt('Enter, please the exponent number');
+            } while (secondNumber === '' || isNaN(Number(secondNumber)) || secondNumber === null);
             result = Math.pow(firstNumber, secondNumber);
             console.log(mathematicalExpression = 'Power(' + firstNumber + ',' + secondNumber +') =' + result);
             oneMoreOperation = confirm('Do you want to do one more calculation or look histiry?');
@@ -70,9 +74,8 @@ do {
         }
         case 'sin': case 'cos': {
             do {
-                number = +prompt('Enter, please the number');
-                validNuumberFirstNamber = number;
-            } while (isNaN(validNuumberFirstNamber));
+                number = prompt('Enter, please the number');
+            } while (number === '' || isNaN(Number(number)) || number === null);
             ;
             switch (operation) {
                 case 'sin': {
@@ -94,8 +97,9 @@ do {
             alert ("This is an invalid operator!");
         }
     }
-    history[history.length] = mathematicalExpression;
-} while (oneMoreOperation === true);
+    if (operation !== 'history') {
+        history[history.length] = mathematicalExpression;
+    }
+} while (operation !== null && oneMoreOperation === true);
 
-alert('Thank you!\nHave a good mood!');
-console.log(history);
+alert('Good!\nCalculator is cloused!');

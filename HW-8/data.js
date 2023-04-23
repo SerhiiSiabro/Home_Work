@@ -291,4 +291,4 @@ function topFiveStudents (array) {
 // studentForDeduction(test);
 // newStudent(test);
 // listOfTheBestStudents (test);
-topFiveStudents (test)
+topFiveStudents (test);

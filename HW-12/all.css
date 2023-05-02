@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.todo-list {
+    list-style: none;
+}
+.todo-item {
+    padding: 5px 30px;
+    border-top: 3px solid black;
+}
+h2 {
+    margin: 0;
+}
+.todo-list--priority-mark {
+    padding: 0 20px 0 0;
+    text-transform: uppercase;
+}
+.todo-list--button {
+    margin: 0 20px 0 0;
+}

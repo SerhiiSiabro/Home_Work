@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text toggle</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="all.css">
+</head>
+<body>
+    <form method="post" id="login-form" class="form-container">
+        <div class="form-item">
+          <label class="label" for="username">Логин:</label>
+          <div class="form-input-error">
+            <input class="form-input" type="text" id="username" name="username" required>
+            <span id="username-error" class="username-span-error"></span>
+          </div>
+        </div>
+        <div class="form-item">
+          <label class="label" for="password">Пароль:</label>
+          <div class="form-input-error">
+            <input class="form-input" type="password" id="password" name="password" required>
+            <span id="userpasword-error" class="username-span-error"></span>
+          </div>
+        </div>
+        <button type="reset" id="login-button" disabled>Логин</button>
+      </form>      
+</body>
+</html>

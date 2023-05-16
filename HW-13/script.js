@@ -20,13 +20,11 @@ function validationPassword() {
   }
 }
 
-form.addEventListener('reset', function() {
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
   if (validateEmail(username.value) && password.value.length > 6) {
-    console.log('13808083-1294-9-394-93-934-934');
-
     if (username.value === 'admin@domain.com' && password.value === 'password123') {
-      console.log('345')
-      window.location.href = "https://www.google.com/";
+      window.location.replace('https://www.google.com');
       } else {
       alert('Неіснує такого користувача!');
      } 

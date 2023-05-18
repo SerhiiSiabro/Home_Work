@@ -5,7 +5,9 @@
     flex-direction: column;
     gap: 30px;
     justify-content: center;
-    align-items: stretch
+    align-items: stretch;
+    background: linear-gradient(323.35deg, #F0145A 6.7%, #693264 70.36%);
+    padding: 20px;
 }
 
 .form-item {

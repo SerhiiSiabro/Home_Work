@@ -1,0 +1,6 @@
+.carusel-item {
+    display: none;
+}
+.active {
+    display: inline-block
+}

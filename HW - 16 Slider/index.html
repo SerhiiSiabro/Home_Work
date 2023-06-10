@@ -9,20 +9,36 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="carusel">
+    <div id="carusel" class="carusel">
         <div class="carusel-inner">
             <div class="carusel-item active">
-                <img src="./img/Publication-1.jpg" alt="First slide">
+                <h1>Slide 1</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptates dolores sint, voluptate quod voluptatum quis ut repellendus excepturi, accusamus quam hic minima suscipit in modi et repellat! Impedit dolore blanditiis, esse, in vero ipsa animi quis tenetur nihil rem corrupti officia. Atque voluptatibus quae illo voluptatum accusantium fugit omnis!</p>
             </div>
             <div class="carusel-item">
-                <img src="./img/Publication-2.jpg" alt="Second slide">
+                <h1>Slide 2</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi quia exercitationem voluptatibus natus sint, praesentium distinctio, impedit velit perferendis porro eum qui placeat voluptates earum provident iste fugiat voluptatum veniam.</p>
             </div>
             <div class="carusel-item">
-                <img src="./img/Publication-3.jpg" alt="Therd slide">
+                <h1>Slide 3</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit deleniti, sed saepe quas quibusdam numquam id commodi facilis vitae, aspernatur laudantium, velit asperiores quae rem similique nostrum. Molestiae repudiandae recusandae dolorem quae! Odit in sequi eum saepe laudantium nesciunt? Officiis?</p>
             </div>
         </div>
-        <button id="carusel-button-next" type="button">Next</button>
-        <button id="carusel-button-prev">Previous</button>
+        <div class="carusel-button-box">
+            <button id="carusel-button-prev">Previous</button>
+            <button id="carusel-button-next" type="button">Next</button>
+            <button id="carusel-button-new-sliade">New slide</button>
+        </div>
+        <!-- <form class="form">
+            <label for="quantity">Количество (от 1 до 5):</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="5">
+            <input type="submit" value="Open">
+           </form> -->
+        <div class="carusel-input-box">
+            <label for="carusel-input-header">Create new slide:</label>
+            <input type="text" id="carusel-input-header" placeholder="Header of new slide">
+            <textarea name="text" id="carusel-input-text" placeholder="Yout text for new slide" cols="30" rows="5"></textarea>
+        </div>
     </div>
 </body>
 </html>

@@ -1,7 +1,13 @@
 const caruselInner = document.querySelector('.carusel-inner');
 const caruselButtonNext = document.getElementById('carusel-button-next');
 const caruselButtonPrev = document.getElementById('carusel-button-prev');
+const caruselButtonNewSlide = document.getElementById('carusel-button-new-sliade');
 let i = 1;
+let counterNamberOfSlides = document.getElementsByClassName('carusel-item').length;
+
+const caruselInputHeaderText = document.getElementById('carusel-input-header');
+const caruselInputTextWords = document.getElementById('carusel-input-text');
+console.log(caruselInputHeaderText.value)
 
 caruselButtonNext.addEventListener('click', function  () {
     let nomberOfSlides = caruselInner.children.length;
@@ -37,3 +43,34 @@ caruselButtonPrev.addEventListener('click', function  () {
     }
 });
 
+class Slider {
+    constructor (number) {
+        this.number = number;
+        this.slides = caruselInner.length;
+    }
+    addNewSlide () {
+        const header = document.createElement('h1');
+        const caruselInputHeader = caruselInputHeaderText.value;
+        header.innerText = caruselInputHeader;
+
+        const p = document.createElement('p')
+        const caruselInputText = caruselInputTextWords.value;
+        p.innerText = caruselInputText;
+
+        const sliderEl = document.createElement('div')
+        sliderEl.classList.add('carusel-item')
+
+        const caruselInner = document.getElementsByClassName('carusel-inner')[0];
+
+        caruselInner.insertAdjacentElement('beforeend', sliderEl)
+
+        sliderEl.insertAdjacentElement('beforeend', header)
+        sliderEl.insertAdjacentElement('beforeend', p)
+        counterNamberOfSlides += 1;
+    }
+
+}
+let sliderEl = '';
+const slider = new Slider(sliderEl);
+
+caruselButtonNewSlide.addEventListener('click', slider.addNewSlide);

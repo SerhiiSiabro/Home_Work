@@ -4,6 +4,8 @@ body {
 .carusel {
     margin: 30px;
     height: 80vh;
+}
+.carusel-block {
     position: relative;
 }
 .carusel-inner {
@@ -14,6 +16,16 @@ body {
     border-color: blue;
     height: 50vh;
     margin-bottom: 30px;
+}
+.carusel-button-box {
+    content: '';
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.img-svg {
+    height: 10px;
+    width: 10px;
 }
 h1 {
     margin: 0 0 30px;
@@ -26,16 +38,24 @@ h1 {
 .active {
     display: inline-block
 }
-.carusel-button-box {
-    content: '';
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-}
 .form {
     display: inline-block;
 }
-.carusel-input-box{
-    display: inline-block;
-    
+
+
+.carusel-control {
+    display: flex;
+    gap: 50px;
+}
+.carusel-control-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.carusel-input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

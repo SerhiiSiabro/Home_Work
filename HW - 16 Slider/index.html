@@ -10,34 +10,59 @@
 </head>
 <body>
     <div id="carusel" class="carusel">
-        <div class="carusel-inner">
-            <div class="carusel-item active">
-                <h1>Slide 1</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptates dolores sint, voluptate quod voluptatum quis ut repellendus excepturi, accusamus quam hic minima suscipit in modi et repellat! Impedit dolore blanditiis, esse, in vero ipsa animi quis tenetur nihil rem corrupti officia. Atque voluptatibus quae illo voluptatum accusantium fugit omnis!</p>
+        <div class="carusel-block">
+            <div class="carusel-inner">
+                <div class="carusel-item active">
+                    <h1>Slide 1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptates dolores sint, voluptate quod voluptatum quis ut repellendus excepturi, accusamus quam hic minima suscipit in modi et repellat! Impedit dolore blanditiis, esse, in vero ipsa animi quis tenetur nihil rem corrupti officia. Atque voluptatibus quae illo voluptatum accusantium fugit omnis!</p>
+                </div>
+                <div class="carusel-item">
+                    <h1>Slide 2</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi quia exercitationem voluptatibus natus sint, praesentium distinctio, impedit velit perferendis porro eum qui placeat voluptates earum provident iste fugiat voluptatum veniam.</p>
+                </div>
+                <div class="carusel-item">
+                    <h1>Slide 3</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit deleniti, sed saepe quas quibusdam numquam id commodi facilis vitae, aspernatur laudantium, velit asperiores quae rem similique nostrum. Molestiae repudiandae recusandae dolorem quae! Odit in sequi eum saepe laudantium nesciunt? Officiis?</p>
+                </div>
             </div>
-            <div class="carusel-item">
-                <h1>Slide 2</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi quia exercitationem voluptatibus natus sint, praesentium distinctio, impedit velit perferendis porro eum qui placeat voluptates earum provident iste fugiat voluptatum veniam.</p>
-            </div>
-            <div class="carusel-item">
-                <h1>Slide 3</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit deleniti, sed saepe quas quibusdam numquam id commodi facilis vitae, aspernatur laudantium, velit asperiores quae rem similique nostrum. Molestiae repudiandae recusandae dolorem quae! Odit in sequi eum saepe laudantium nesciunt? Officiis?</p>
+            <div class="carusel-button-box">
+                <button id="carusel-button-first-slide">
+                    <img class="img-svg" src="svg/free-icon-font-angle-double-small-left-3916821.png" alt="">
+                </button>
+                <button id="carusel-button-prev">
+                    <img class="img-svg" src="svg/free-icon-font-angle-small-left-3916935.png" alt="">
+                </button>
+                <button id="carusel-button-next" type="button">
+                    <img class="img-svg" src="svg/free-icon-font-angle-small-right-3916929.png" alt="">
+                </button>
+                <button id="carusel-button-last-slide">
+                    <img class="img-svg" src="svg/free-icon-font-angle-double-small-right-3916826.png" alt="">
+                </button>
             </div>
         </div>
-        <div class="carusel-button-box">
-            <button id="carusel-button-prev">Previous</button>
-            <button id="carusel-button-next" type="button">Next</button>
-            <button id="carusel-button-new-sliade">New slide</button>
-        </div>
-        <!-- <form class="form">
-            <label for="quantity">Количество (от 1 до 5):</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="5">
-            <input type="submit" value="Open">
-           </form> -->
-        <div class="carusel-input-box">
-            <label for="carusel-input-header">Create new slide:</label>
-            <input type="text" id="carusel-input-header" placeholder="Header of new slide">
-            <textarea name="text" id="carusel-input-text" placeholder="Yout text for new slide" cols="30" rows="5"></textarea>
+        <div class="carusel-control">
+            <div class="carusel-control-aside">
+                <div class="carusel-control-open-slide">
+                    <label for="carusel-control-open-slide-number">Open slide:</label>
+                    <input type="number" name="number" id="carusel-control-open-slide-number">
+                    <button type="submit">Open</button>
+                </div>
+                <div class="carusel-control-delete-last-slide">
+                    <label for="carusel-control-delete-last-slide-button" >Delete last slide</label>
+                    <button type="submit" id="carusel-control-delete-last-slide-button">DELETE</button>
+                </div>
+                <div class="carusel-control-delete-slide">
+                    <label for="carusel-control-delete-slide-number">Delete slide:</label>
+                    <input type="number" name="number" id="carusel-control-delete-slide-number">
+                    <button type="submit">DELETE</button>
+                </div>
+            </div>
+            <div class="carusel-input-box">
+                <label for="carusel-input-header">Creation of new slide:</label>
+                <input type="text" id="carusel-input-header" placeholder="Header of new slide">
+                <textarea name="text" id="carusel-input-text" placeholder="Yout text for new slide" cols="50" rows="5"></textarea>
+                <button id="carusel-button-new-sliade">New slide</button>
+            </div>
         </div>
     </div>
 </body>

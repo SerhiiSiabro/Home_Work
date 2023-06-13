@@ -1,73 +1,78 @@
-const caruselInner = document.querySelector('.carusel-inner');
+const caruselInner = document.getElementById('carusel-inner');
+
 const caruselButtonNext = document.getElementById('carusel-button-next');
 const caruselButtonPrev = document.getElementById('carusel-button-prev');
-const caruselButtonNewSlide = document.getElementById('carusel-button-new-sliade');
 const caruselButtonFirstSlide = document.getElementById('carusel-button-first-slide');
 const caruselButtonLastSlide = document.getElementById('carusel-button-last-slide');
+const caruselButtonDeleteLastSlide = document.querySelector('.carusel-control-delete-last-slide button')
+const caruselButtonAddSlide = document.getElementById('carusel-button-add-sliade');
 
+let notActiveSlide;
 let i = 1;
 let counterNamberOfSlides = document.getElementsByClassName('carusel-item').length;
 let currentSlide = document.getElementsByClassName('active')
 
-const caruselInputHeaderText = document.getElementById('carusel-input-header');
-const caruselInputTextWords = document.getElementById('carusel-input-text');
+let caruselInputHeaderText = document.getElementById('carusel-input-header');
+let caruselInputTextWords = document.getElementById('carusel-input-text');
 
-
-
-caruselButtonNext.addEventListener('click', function  () {
-    let nomberOfSlides = caruselInner.children.length;
-    if (i !== nomberOfSlides) {
-        let notActiveSlide = document.querySelector('.carusel-item.active').nextElementSibling;
-        let classActive = document.querySelector('.carusel-item.active');
-        classActive.classList.remove('active');
-        notActiveSlide.classList.add('active');
-        i++;
-    } else if (i = 1) {
-        let firstSlide = caruselInner.firstElementChild;
-        let lastSlide = caruselInner.lastElementChild;
-        firstSlide.classList.add('active');
-        lastSlide.classList.remove('active');
-    } else {
-        caruselInner.firstElementChild.classList.add('active')
-    }
-});
-
-caruselButtonPrev.addEventListener('click', function  () {
-    console.log(`value = ${i}`)
-    let nomberOfSlides = caruselInner.children.length;
-    if (i !== 1) {
-        let notActiveSlide = document.querySelector('.carusel-item.active').previousElementSibling;
-        let classActive = document.querySelector('.carusel-item.active');
-        classActive.classList.remove('active');
-        notActiveSlide.classList.add('active');
-        i--;
-    } else if (i = nomberOfSlides) {
-        let firstSlide = caruselInner.firstElementChild;
-        let lastSlide = caruselInner.lastElementChild;
-        firstSlide.classList.remove('active');
-        lastSlide.classList.add('active');
-    } else {
-        caruselInner.firstElementChild.classList.add('active')
-    }
-});
+const caruselControlOpenSlide = document.querySelector('.carusel-control-open-slide');
 
 class Slider {
-    constructor (number) {
-        this.number = number;
-        this.slides = caruselInner.length;
-        this.numberOfSlides = caruselInner.children.length;
-        this.currentSlide = currentSlide;
-        this.caruselInner = caruselInner;
+    constructor() {
 
     }
-    addNewSlide () {
+    nextSlide() {
+        if (i !== caruselInner.children.length && notActiveSlide !== null) {
+            notActiveSlide = document.querySelector('.carusel-item.active').nextElementSibling;
+            let classActive = document.querySelector('.carusel-item.active');
+            classActive.classList.remove('active');
+            notActiveSlide.classList.add('active');
+            i++;
+        } else if (i = 1) {
+            let firstSlide = caruselInner.firstElementChild;
+            let lastSlide = caruselInner.lastElementChild;
+            firstSlide.classList.add('active');
+            lastSlide.classList.remove('active');
+        } else {
+            caruselInner.firstElementChild.classList.add('active')
+        }
+    }
+    prevSlide() {
+        if (i !== 1 && notActiveSlide !== null) {
+            notActiveSlide = document.querySelector('.carusel-item.active').previousElementSibling;
+            let classActive = document.querySelector('.carusel-item.active');
+            classActive.classList.remove('active');
+            notActiveSlide.classList.add('active');
+            i--;
+        } else if (i = caruselInner.children.length) {
+            let firstSlide = caruselInner.firstElementChild;
+            let lastSlide = caruselInner.lastElementChild;
+            firstSlide.classList.remove('active');
+            lastSlide.classList.add('active');
+        } else {
+            caruselInner.firstElementChild.classList.add('active')
+        }
+    }
+    firstSlide() {
+        i = 1;
+        currentSlide[0].classList.remove('active')
+        caruselInner.firstElementChild.classList.add('active')
+    }
+    lastSlide() {
+        i = caruselInner.children.length;
+        currentSlide[0].classList.remove('active')
+        caruselInner.lastElementChild.classList.add('active')
+    }
+    addSlide() {
         const header = document.createElement('h1');
         const caruselInputHeader = caruselInputHeaderText.value;
         header.innerText = caruselInputHeader;
-
+        caruselInputHeaderText.value = '';
+        
         const p = document.createElement('p')
         const caruselInputText = caruselInputTextWords.value;
         p.innerText = caruselInputText;
+        caruselInputTextWords.value = '';
 
         const sliderEl = document.createElement('div')
         sliderEl.classList.add('carusel-item')
@@ -81,19 +86,32 @@ class Slider {
         counterNamberOfSlides += 1;
         slider.lastSlide()
     };
-    firstSlide () {
+    removeLastSlide() {
         currentSlide[0].classList.remove('active')
-        caruselInner.firstElementChild.classList.add('active')
+        const lastSlide = caruselInner.lastChild;
+        lastSlide.remove();
+        caruselInner.lastElementChild.classList.add('active');
+        i = 1;
     }
-    lastSlide () {
-        currentSlide[0].classList.remove('active')
-        caruselInner.lastElementChild.classList.add('active')
-    }
+    // openSlideByIndex(number) {
+        
+    // }
+    // removeSlide(number) {
 
+    // }
+    // insertSlide(number, title, description) {
+
+    // }
 }
-let sliderEl = '';
-const slider = new Slider(sliderEl);
 
-caruselButtonNewSlide.addEventListener('click', slider.addNewSlide);
+const slider = new Slider();
+
+caruselButtonNext.addEventListener('click', slider.nextSlide);
+caruselButtonPrev.addEventListener('click', slider.prevSlide);
 caruselButtonFirstSlide.addEventListener('click', slider.firstSlide);
 caruselButtonLastSlide.addEventListener('click', slider.lastSlide);
+caruselButtonDeleteLastSlide.addEventListener('click', slider.removeLastSlide)
+caruselButtonAddSlide.addEventListener('click', slider.addSlide);
+// openSlideByIndex(number)
+// removeSlide(number)
+// insertSlide(number, title, description)

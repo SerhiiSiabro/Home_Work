@@ -59,3 +59,7 @@ h1 {
     flex-direction: column;
     gap: 5px;
 }
+
+.input-mistake {
+    outline: red solid 1px;
+}

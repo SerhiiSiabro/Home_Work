@@ -6,6 +6,7 @@ const caruselButtonFirstSlide = document.getElementById('carusel-button-first-sl
 const caruselButtonLastSlide = document.getElementById('carusel-button-last-slide');
 const caruselButtonDeleteLastSlide = document.querySelector('.carusel-control-delete-last-slide button')
 const caruselButtonAddSlide = document.getElementById('carusel-button-add-sliade');
+const caruselButtonOpenSlideByIndex = document.getElementById('carusel-control-open-slide-button')
 
 let notActiveSlide;
 let i = 1;
@@ -15,11 +16,16 @@ let currentSlide = document.getElementsByClassName('active')
 let caruselInputHeaderText = document.getElementById('carusel-input-header');
 let caruselInputTextWords = document.getElementById('carusel-input-text');
 
-const caruselControlOpenSlide = document.querySelector('.carusel-control-open-slide');
+// let number;
+// let openSlideInput = document.getElementById('carusel-control-open-slide-number')
+// openSlideInput.addEventListener('input', () => {
+//     number = openSlideInput.value;
+//     console.log(number)
+// })
 
 class Slider {
-    constructor() {
-
+    constructor(number) {
+        this.number = number;
     }
     nextSlide() {
         if (i !== caruselInner.children.length && notActiveSlide !== null) {
@@ -88,13 +94,17 @@ class Slider {
     };
     removeLastSlide() {
         currentSlide[0].classList.remove('active')
-        const lastSlide = caruselInner.lastChild;
+        const lastSlide = caruselInner.lastElementChild;
         lastSlide.remove();
         caruselInner.lastElementChild.classList.add('active');
-        i = 1;
+        i = caruselInner.children.length;
     }
-    // openSlideByIndex(number) {
-        
+    // openSlideByIndex() {
+    //     currentSlide[0].classList.remove('active')
+    //     // caruselInner[this.number].classList.add('active');
+    //     let slideIndex = this.number;
+    //     console.dir(caruselInner.children[slideIndex])
+    //     i = caruselInner.children.length;
     // }
     // removeSlide(number) {
 
@@ -112,6 +122,7 @@ caruselButtonFirstSlide.addEventListener('click', slider.firstSlide);
 caruselButtonLastSlide.addEventListener('click', slider.lastSlide);
 caruselButtonDeleteLastSlide.addEventListener('click', slider.removeLastSlide)
 caruselButtonAddSlide.addEventListener('click', slider.addSlide);
-// openSlideByIndex(number)
+// caruselButtonOpenSlideByIndex.addEventListener('click', slider.openSlideByIndex)
+
 // removeSlide(number)
 // insertSlide(number, title, description)

@@ -1,6 +1,20 @@
 body {
     margin: 0;
 }
+.button {
+    background-color: #fff5a8;
+    border: 1px solid #000000;
+    padding: 2px 7px;
+    border-radius: 3px;
+}
+.button:hover {
+    cursor: pointer;
+    color: #1d1dc6;
+    background-color:rgba(101, 255, 73, 0.942);
+    border: 1px solid #1d1dc6;
+    padding: 2px 7px;
+    border-radius: 3px;
+}
 .carusel {
     margin: 30px;
     height: 80vh;
@@ -16,6 +30,7 @@ body {
     border-color: blue;
     height: 50vh;
     margin-bottom: 30px;
+    transition: transform 0.5s ease-in-out;
 }
 .carusel-button-box {
     content: '';

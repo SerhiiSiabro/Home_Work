@@ -24,8 +24,8 @@ let caruselInputTextWords = document.getElementById('carusel-input-text');
 // })
 
 class Slider {
-    constructor(number) {
-        this.number = number;
+    constructor(numberOfSlide) {
+        let numberOfSlide = document.getElementsByClassName('.carusel-control-open-slide-number');
     }
     nextSlide() {
         if (i !== caruselInner.children.length && notActiveSlide !== null) {
@@ -99,22 +99,23 @@ class Slider {
         caruselInner.lastElementChild.classList.add('active');
         i = caruselInner.children.length;
     }
-    // openSlideByIndex() {
-    //     currentSlide[0].classList.remove('active')
-    //     // caruselInner[this.number].classList.add('active');
-    //     let slideIndex = this.number;
-    //     console.dir(caruselInner.children[slideIndex])
-    //     i = caruselInner.children.length;
-    // }
-    // removeSlide(number) {
+    openSlideByIndex() {
+        console.log(numberOfSlide)
+        // currentSlide[0].classList.remove('active')
+        // // caruselInner[this.number].classList.add('active');
+        // let slideIndex = this.number;
+        // // console.dir(caruselInner.children[slideIndex])
+        // i = caruselInner.children.length;
+    }
+    // // removeSlide(number) {
 
-    // }
-    // insertSlide(number, title, description) {
+    // // }
+    // // insertSlide(number, title, description) {
 
-    // }
+    // // }
 }
 
-const slider = new Slider();
+const slider = new Slider(numberOfSlide);
 
 caruselButtonNext.addEventListener('click', slider.nextSlide);
 caruselButtonPrev.addEventListener('click', slider.prevSlide);
@@ -122,7 +123,7 @@ caruselButtonFirstSlide.addEventListener('click', slider.firstSlide);
 caruselButtonLastSlide.addEventListener('click', slider.lastSlide);
 caruselButtonDeleteLastSlide.addEventListener('click', slider.removeLastSlide)
 caruselButtonAddSlide.addEventListener('click', slider.addSlide);
-// caruselButtonOpenSlideByIndex.addEventListener('click', slider.openSlideByIndex)
+caruselButtonOpenSlideByIndex.addEventListener('click', slider.openSlideByIndex)
 
 // removeSlide(number)
 // insertSlide(number, title, description)
